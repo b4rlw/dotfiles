@@ -1,0 +1,195 @@
+# cSpell:words alacritty lfcd
+live_config_reload: true
+
+env:
+  TERM: xterm-256color
+
+# Colors (catppuccin)
+colors:
+  # Default colors
+  primary:
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
+
+  cursor:
+    text: '0x1E1D2F'
+    cursor: '0xF5E0DC'
+
+  # Normal colors
+  normal:
+    black:   '0x6E6C7E'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
+
+  # Bright colors
+  bright:
+    black:   '0x988BA2'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '0xD9E0EE'
+
+  indexed_colors:
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
+
+# import:
+#   - ~/.config/alacritty/aw/current.yml
+
+# shell:
+#   program: /usr/local/bin/fish
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+window:
+  opacity: 0.85
+  padding:
+    x: 16
+    y: 16
+  dynamic_padding: true
+  decorations: buttonless
+
+font:
+  size: 13.5
+  use_thin_strokes: true
+  normal:
+    family: MonoLisa Nerd Font
+    # family: JetBrainsMono Nerd Font
+    # family: CartographCF Nerd Font
+    # family: Hack Nerd Font
+    style: Regular
+  bold:
+    family: MonoLisa Nerd Font
+    # family: JetBrainsMono Nerd Font
+    # family: CartographCF Nerd Font
+    # family: Hack Nerd Font
+    style: Bold
+  italic:
+    family: MonoLisa Nerd Font
+    # family: JetBrainsMono Nerd Font
+    # family: CartographCF Nerd Font
+    # family: Hack Nerd Font
+    style: Italic
+    # style: Regular Italic
+  bold_italic:
+    family: MonoLisa Nerd Font
+    # family: JetBrainsMono Nerd Font
+    # family: CartographCF Nerd Font
+    # family: Hack Nerd Font
+    style: Bold Italic
+
+mouse:
+  hide_when_typing: true
+
+key_bindings:
+  # ====
+  # TMUX
+  # ====
+  # COMMAND MODE 
+  - { key: Semicolon, mods: Command, chars: "\x02:" }
+
+  # DETACH
+  - { key: D, mods: Command|Shift, chars: "\x02d" }
+
+  # RENAME 
+
+  # SESSIONS 
+  # Kill tmux session 
+  - { key: X, mods: Command|Shift, chars: "\x02x" }
+  # View current tmux sessions
+  - { key: K, mods: Command, chars: "\x02s" }
+  # Switch to last tmux session
+  - { key: L, mods: Command, chars: "\x02L" }
+  # Rename tmux session
+  - { key: R, mods: Command, chars: "\x02$" }
+
+  # WINDOWS
+  - { key: Key1, mods: Command, chars: "\x021" }
+  - { key: Key2, mods: Command, chars: "\x022" }
+  - { key: Key3, mods: Command, chars: "\x023" }
+  - { key: Key4, mods: Command, chars: "\x024" }
+  - { key: Key5, mods: Command, chars: "\x025" }
+  - { key: Key6, mods: Command, chars: "\x026" }
+  - { key: Key7, mods: Command, chars: "\x027" }
+  - { key: Key8, mods: Command, chars: "\x028" }
+  - { key: Key9, mods: Command, chars: "\x029" }
+  # Create a new tmux window
+  - { key: T, mods: Command, chars: "\x02c" }
+  # Switch to previous tmux window
+  - { key: LBracket, mods: Command, chars: "\x02p" }
+  # Switch to next tmux window
+  - { key: RBracket, mods: Command, chars: "\x02n" }
+  # Rename the current tmux window 
+  - { key: Comma, mods: Command, chars: "\x02," }
+
+  # PANES 
+  # Navigate 
+  - { key: H, mods: Option, chars: "\x02h" }
+  - { key: J, mods: Option, chars: "\x02j" }
+  - { key: K, mods: Option, chars: "\x02k" }
+  - { key: L, mods: Option, chars: "\x02l" }
+  # Resize 
+  - { key: H, mods: Option|Shift, chars: "\x02\x08" }
+  - { key: J, mods: Option|Shift, chars: "\x02\x0a" }
+  - { key: K, mods: Option|Shift, chars: "\x02\x0b" }
+  - { key: L, mods: Option|Shift, chars: "\x02\x0c" }
+  # Split the current pane in two, up and down
+  - { key: E, mods: Command, chars: "\x02\"" }
+  # Split the current pane in two, left and right
+  - { key: E, mods: Command|Shift, chars: "\x02%" }
+  # Kill the current tmux pane (and window if last plane)
+  - { key: W, mods: Command, chars: "\x02x" }
+  # Toggle zoom state of current tmux pane
+  - { key: Z, mods: Command, chars: "\x02z" }
+  
+  # TOOLS 
+  # Open lazygit in a new tmux window
+  - { key: G, mods: Command, chars: "\x02g" }
+  # Open lazydocker in a new tmux window
+  - { key: D, mods: Command, chars: "\x02K" }
+
+  # ================= 
+  # COMMAND SHORTCUTS
+  # ================= 
+
+  # ------
+  # SYSTEM
+  # ------
+  - { key: F, mods: Command, chars: "lfcd\n" }
+
+  # ---
+  # VIM
+  # ---
+  # Type <escape>:w<enter> to save neovim
+  - { key: S, mods: Command, chars: ":w\n" }
+  - { key: S, mods: Command|Shift, chars: ":wa\n" }
+
+  # ------
+  # PYTHON
+  # ------
+
+  # JUPYTER
+  # - { key: I, mods: Command, chars: "ipython\n" }
+  # - { key: N, mods: Command, chars: "jupyter notebook\n" }
+  # - { key: J, mods: Command, chars: "jupyter lab\n" }
+  
+  # KEDRO
+  # - { key: R, mods: Command, chars: "kedro run\n"}
+  # - { key: B, mods: Command, chars: "kedro build-reqs\n" }
+  # - { key: V, mods: Command|Option, chars: "kedro viz -a\n" }
+  # - { key: V, mods: Command|Shift, chars: "kedro viz\n" }
+
+  # - { key: I, mods: Command|Shift, chars: "kedro ipython\n" }
+  # - { key: N, mods: Command|Shift, chars: "kedro jupyter notebook\n" }
+  # - { key: J, mods: Command|Shift, chars: "kedro jupyter lab\n" }
+
