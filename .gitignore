@@ -19,6 +19,10 @@ mackup/.aws/credentials
 mackup/.wakatime.cfg
 mackup/.gnupg/trustdb.gpg
 mackup/.yarnrc
+mackup/.jupyter/lab/workspaces
+/* .jupyter/lab/workspaces */
+mackup/.ipython/profile_default
+/* .ipython/profile_default */
 
 mackup/Library/Application Support/Adobe
 mackup/Library/Developer/Xcode/UserData/KeyBindings
