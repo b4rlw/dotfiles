@@ -54,6 +54,7 @@ yabai -m rule --add app="Karabiner-EventViewer" space=1
 yabai -m rule --add app="Messages"              space=2
 yabai -m rule --add app="Discord"               space=2
 yabai -m rule --add app="Messenger"             space=2
+yabai -m rule --add app="Signal"                space=2
 
 # Organisation
 yabai -m rule --add app="Calendar"              space=3
@@ -108,6 +109,7 @@ yabai -m rule --add app="Archetype Petrucci"    space=9
 yabai -m rule --add app="System Preferences" manage=off
 yabai -m rule --add app="Time Machine" manage=off
 yabai -m rule --add app="FaceTime" manage=off sticky=on
+yabai -m rule --add app="NordVPN" manage=off sticky=on
 yabai -m rule --add app="Cheat Engine" manage=off
 yabai -m rule --add app="PCSX2" manage=off
 yabai -m rule --add app="Stats" manage=off

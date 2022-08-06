@@ -80,6 +80,12 @@ lvim.plugins = {
     "p00f/nvim-ts-rainbow",
   },
   {
+    "lunarvim/horizon.nvim",
+  },
+  {
+    "lunarvim/synthwave84.nvim",
+  },
+  {
     "catppuccin/nvim",
     as = "catppuccin",
     config = function()
@@ -91,18 +97,18 @@ lvim.plugins = {
       catppuccin.setup({
         transparent_background = true,
         styles = {
-          comments = "italic",
-          conditionals = "italic",
-          loops = "italic",
-          functions = "NONE",
-          keywords = "italic",
-          strings = "NONE",
-          variables = "NONE",
-          numbers = "NONE",
-          booleans = "NONE",
-          properties = "NONE",
-          types = "NONE",
-          operators = "italic",
+          comments = { "italic" },
+          conditionals = { "italic" },
+          loops = { "italic" },
+          functions = {},
+          keywords = { "italic" },
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = { "italic" },
         },
         integrations = {
           telescope = false,
