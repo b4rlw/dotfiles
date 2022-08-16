@@ -200,6 +200,7 @@ lvim.plugins = {
   },
 }
 
+-- lvim.colorscheme = "catppuccin"
 lvim.colorscheme = "catppuccin"
 lvim.builtin.lualine.options.theme = "catppuccin"
 

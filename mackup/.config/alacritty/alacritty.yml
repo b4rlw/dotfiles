@@ -98,6 +98,9 @@ key_bindings:
   # COMMAND MODE 
   - { key: Semicolon, mods: Command, chars: "\x02:" }
 
+  # ATTACH POPUP
+  - { key: J, mods: Command, chars: "\x02\x54" }
+
   # DETACH
   - { key: D, mods: Command|Shift, chars: "\x02d" }
 

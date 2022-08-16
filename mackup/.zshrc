@@ -168,7 +168,7 @@ export BAT_THEME="base16"
 export FZF_TMUX_OPTS="-p"
 export FZF_CTRL_R_OPTS="--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
-export PATH="/Users/jordan/.local/bin:$PATH"
+export PATH="/Users/Jordan/.local/bin:/Users/Jordan/.config/bin:$PATH"
 
 # bindkey '^ ' autosuggest-accept
 eval "$(zoxide init zsh)"

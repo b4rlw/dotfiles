@@ -28,7 +28,6 @@
     },
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "python.defaultInterpreterPath": "/Users/jordan/mambaforge/bin/python",
-    "notebook.lineNumbers": "on",
     "git.ignoreLegacyWarning": true,
     "workbench.sideBar.location": "left",
     // "editor.fontFamily": "Cartograph CF",
@@ -542,6 +541,7 @@
     ],
     "terminal.integrated.enableMultiLinePasteWarning": false,
     // "codesnap.showWindowControls": false,
+    "vim.useCtrlKeys": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -558,10 +558,28 @@
             "commands": [
                 "editor.action.moveLinesUpAction"
             ]
-        } // moveLineUp
+        }, // moveLineUp
+        {
+            "before": [
+                "u"
+            ],
+            "commands": [
+                "undo"
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "commands": [
+                "redo"
+            ]
+        },
     ],
     "editor.suggest.showWords": false,
     "cSpell.enabled": false,
     "Lua.telemetry.enable": false,
-    "workbench.colorTheme": "Victor's Dark Horizon"
+    "workbench.colorTheme": "Victor's Dark Horizon",
+    "notebook.lineNumbers": "on",
+    "editor.minimap.enabled": false
 }
