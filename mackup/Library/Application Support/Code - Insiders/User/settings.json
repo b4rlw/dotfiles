@@ -1,5 +1,5 @@
 {
     "workbench.colorTheme": "Default Dark+",
-    "python.insidersChannel": "weekly",
-    "python.defaultInterpreterPath": "/Users/jordan/mambaforge/bin/python"
+    "python.defaultInterpreterPath": "/Users/jordan/mambaforge/bin/python",
+    "terminal.integrated.inheritEnv": false
 }

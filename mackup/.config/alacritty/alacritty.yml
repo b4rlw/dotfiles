@@ -53,6 +53,7 @@ selection:
 
 window:
   opacity: 0.85
+  # opacity: 1 
   padding:
     x: 16
     y: 16
