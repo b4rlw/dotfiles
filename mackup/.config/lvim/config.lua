@@ -54,6 +54,78 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+vim.g.indent_blankline_bufname_exclude = { "README.md" }
+vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
+vim.g.indent_blankline_filetype_exclude = {
+  "alpha",
+  "log",
+  "gitcommit",
+  "dapui_scopes",
+  "dapui_stacks",
+  "dapui_watches",
+  "dapui_breakpoints",
+  "dapui_hover",
+  "LuaTree",
+  "dbui",
+  "UltestSummary",
+  "UltestOutput",
+  "vimwiki",
+  "markdown",
+  "json",
+  "txt",
+  "vista",
+  "NvimTree",
+  "git",
+  "TelescopePrompt",
+  "undotree",
+  "flutterToolsOutline",
+  "org",
+  "orgagenda",
+  "help",
+  "startify",
+  "dashboard",
+  "packer",
+  "neogitstatus",
+  "Outline",
+  "Trouble",
+  "lspinfo",
+  "", -- for all buffers without a file type
+}
+-- vim.g.indent_blankline_char = "▏"
+vim.g.indent_blankline_char = "│"
+-- vim.g.indent_blankline_char_list = { "", "¦", "|", "¦", "" }
+vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.indent_blankline_show_first_indent_level = true
+vim.g.indent_blankline_space_char_blankline = " "
+vim.g.indent_blankline_use_treesitter = true
+vim.g.indent_blankline_show_foldtext = false
+vim.g.indent_blankline_show_current_context = true
+vim.g.indent_blankline_show_current_context_start = false
+vim.g.indent_blankline_context_patterns = {
+  "class",
+  "return",
+  "function",
+  "method",
+  "^if",
+  "^do",
+  "^switch",
+  "^while",
+  "jsx_element",
+  "^for",
+  "^object",
+  "^table",
+  "block",
+  "arguments",
+  "if_statement",
+  "else_clause",
+  "jsx_element",
+  "jsx_self_closing_element",
+  "try_statement",
+  "catch_clause",
+  "import_statement",
+  "operation_type",
+}
+
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
@@ -96,20 +168,20 @@ lvim.plugins = {
       -- vim.g.catppuccin_flavour = "mocha"
       catppuccin.setup({
         transparent_background = true,
-        styles = {
-          comments = { "italic" },
-          conditionals = { "italic" },
-          loops = { "italic" },
-          functions = {},
-          keywords = { "italic" },
-          strings = {},
-          variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-          operators = { "italic" },
-        },
+        -- styles = {
+        --   comments = { "italic" },
+        --   conditionals = { "italic" },
+        --   loops = { "italic" },
+        --   functions = {},
+        --   keywords = { "italic" },
+        --   strings = {},
+        --   variables = {},
+        --   numbers = {},
+        --   booleans = {},
+        --   properties = {},
+        --   types = {},
+        --   operators = { "italic" },
+        -- },
         integrations = {
           telescope = false,
           bufferline = false,
@@ -122,85 +194,8 @@ lvim.plugins = {
       catppuccin.load()
     end,
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      vim.g.indent_blankline_bufname_exclude = { "README.md" }
-      vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
-      vim.g.indent_blankline_filetype_exclude = {
-        "alpha",
-        "log",
-        "gitcommit",
-        "dapui_scopes",
-        "dapui_stacks",
-        "dapui_watches",
-        "dapui_breakpoints",
-        "dapui_hover",
-        "LuaTree",
-        "dbui",
-        "UltestSummary",
-        "UltestOutput",
-        "vimwiki",
-        "markdown",
-        "json",
-        "txt",
-        "vista",
-        "NvimTree",
-        "git",
-        "TelescopePrompt",
-        "undotree",
-        "flutterToolsOutline",
-        "org",
-        "orgagenda",
-        "help",
-        "startify",
-        "dashboard",
-        "packer",
-        "neogitstatus",
-        "Outline",
-        "Trouble",
-        "lspinfo",
-        "", -- for all buffers without a file type
-      }
-      -- vim.g.indent_blankline_char = "▏"
-      vim.g.indent_blankline_char = "│"
-      -- vim.g.indent_blankline_char_list = { "", "¦", "|", "¦", "" }
-      vim.g.indent_blankline_show_trailing_blankline_indent = false
-      vim.g.indent_blankline_show_first_indent_level = true
-      vim.g.indent_blankline_space_char_blankline = " "
-      vim.g.indent_blankline_use_treesitter = true
-      vim.g.indent_blankline_show_foldtext = false
-      vim.g.indent_blankline_show_current_context = true
-      vim.g.indent_blankline_show_current_context_start = false
-      vim.g.indent_blankline_context_patterns = {
-        "class",
-        "return",
-        "function",
-        "method",
-        "^if",
-        "^do",
-        "^switch",
-        "^while",
-        "jsx_element",
-        "^for",
-        "^object",
-        "^table",
-        "block",
-        "arguments",
-        "if_statement",
-        "else_clause",
-        "jsx_element",
-        "jsx_self_closing_element",
-        "try_statement",
-        "catch_clause",
-        "import_statement",
-        "operation_type",
-      }
-    end
-  },
 }
 
--- lvim.colorscheme = "catppuccin"
 lvim.colorscheme = "catppuccin"
 lvim.builtin.lualine.options.theme = "catppuccin"
 
