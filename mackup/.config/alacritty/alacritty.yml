@@ -62,7 +62,7 @@ window:
 
 font:
   size: 13.5
-  use_thin_strokes: true
+  # use_thin_strokes: true
   normal:
     family: MonoLisa Nerd Font
     # family: JetBrainsMono Nerd Font

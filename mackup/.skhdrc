@@ -72,10 +72,10 @@ hyper - s : yabai -m space --layout stack
 hyper - t :  hs -c 'stackline.config:toggle("appearance.showIcons")'
 # Add the active window to the window or stack to the {direction}
 # Note that this only works when the active window does *not* already belong to a stack
-cmd + ctrl - h : $HOME/.scripts/i3-stack.sh west
-cmd + ctrl - j : $HOME/.scripts/i3-stack.sh south
-cmd + ctrl - k : $HOME/.scripts/i3-stack.sh north
-cmd + ctrl - l : $HOME/.scripts/i3-stack.sh east
+cmd + ctrl - h : $HOME/.config/bin/i3-stack.sh west
+cmd + ctrl - j : $HOME/.config/bin/i3-stack.sh south
+cmd + ctrl - k : $HOME/.config/bin/i3-stack.sh north
+cmd + ctrl - l : $HOME/.config/bin/i3-stack.sh east
 
 ##############################################
 # Sizing

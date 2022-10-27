@@ -82,6 +82,7 @@ export ZSH="/Users/jordan/.oh-my-zsh"
 plugins=(git python history copypath copyfile copybuffer dirhistory macos \
 zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-syntax-highlighting)
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -111,8 +112,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias osg-mount="sudo mkdir -p /cvmfs/config-osg.opensciencegrid.org && sudo mount -t cvmfs config-osg.opensciencegrid.org /cvmfs/config-osg.opensciencegrid.org"
 alias gwosc-mount="sudo mkdir -p /cvmfs/gwosc.osgstorage.org && sudo mount -t cvmfs gwosc.osgstorage.org /cvmfs/gwosc.osgstorage.org"
+alias t="tmux"
 alias ta="tmux a"
+alias td="tmux detach"
+alias tk="tmux kill-server"
+alias mm="micromamba"
 # alias bat="bat --theme=base16"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
