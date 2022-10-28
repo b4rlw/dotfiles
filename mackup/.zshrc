@@ -126,28 +126,28 @@ alias mm="micromamba"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jordan/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/local/Caskroom/mambaforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/jordan/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/Users/jordan/mambaforge/etc/profile.d/conda.sh"
+    if [ -f "/usr/local/Caskroom/mambaforge/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/mambaforge/base/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/jordan/mambaforge/bin:$PATH"
+        export PATH="/usr/local/Caskroom/mambaforge/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
 
-if [ -f "/Users/jordan/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/Users/jordan/mambaforge/etc/profile.d/mamba.sh"
+if [ -f "/usr/local/Caskroom/mambaforge/base/etc/profile.d/mamba.sh" ]; then
+    . "/usr/local/Caskroom/mambaforge/base/etc/profile.d/mamba.sh"
 fi
 # <<< conda initialize <<<
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE="/Users/jordan/micromamba/micromamba";
+export MAMBA_EXE="/usr/local/bin/micromamba";
 export MAMBA_ROOT_PREFIX="/Users/jordan/micromamba";
-__mamba_setup="$('/Users/jordan/micromamba/micromamba' shell hook --shell zsh --prefix '/Users/jordan/micromamba' 2> /dev/null)"
+__mamba_setup="$('/usr/local/bin/micromamba' shell hook --shell zsh --prefix '/Users/jordan/micromamba' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__mamba_setup"
 else
@@ -181,3 +181,8 @@ eval "$(zoxide init zsh)"
 eval source <(/usr/local/bin/starship init zsh --print-full-init)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi "tty*" | uniq | wc -l);
+if [ $LIVE_COUNTER -eq 1 ]; then
+     neofetch
+fi

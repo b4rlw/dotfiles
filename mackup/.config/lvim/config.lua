@@ -1,13 +1,15 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
--- lvim.format_on_save = { timeout = 5000 }
--- lvim.lsp.null_ls.setup.timeout_ms = 500
+lvim.format_on_save = { timeout = 5000 }
+lvim.lsp.null_ls.setup.timeout_ms = 500
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -161,41 +163,56 @@ lvim.plugins = {
     "catppuccin/nvim",
     as = "catppuccin",
     config = function()
-      local catppuccin = require("catppuccin")
-      -- vim.g.catppuccin_flavour = "latte"
-      -- vim.g.catppuccin_flavour = "frappe"
-      vim.g.catppuccin_flavour = "macchiato"
-      -- vim.g.catppuccin_flavour = "mocha"
-      catppuccin.setup({
-        transparent_background = true,
-        -- styles = {
-        --   comments = { "italic" },
-        --   conditionals = { "italic" },
-        --   loops = { "italic" },
-        --   functions = {},
-        --   keywords = { "italic" },
-        --   strings = {},
-        --   variables = {},
-        --   numbers = {},
-        --   booleans = {},
-        --   properties = {},
-        --   types = {},
-        --   operators = { "italic" },
+      require("catppuccin").setup({
+        flavour = "macchiato", -- latte, frappe, macchiato, mocha
+        -- background = { -- :h background
+        --   light = "latte",
+        --   dark = "mocha",
         -- },
+        compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
+        transparent_background = true,
+        -- term_colors = false,
+        -- dim_inactive = {
+        --   enabled = false,
+        --   shade = "dark",
+        --   percentage = 0.15,
+        -- },
+        styles = {
+          comments = { "italic" },
+          conditionals = { "italic" },
+          loops = { "italic" },
+          functions = {},
+          keywords = { "italic" },
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = { "italic" },
+        },
+        color_overrides = {},
+        custom_highlights = {},
         integrations = {
-          telescope = false,
-          bufferline = false,
-          -- ts_rainbow = true,
+          cmp = true,
+          gitsigns = true,
+          bufferline = true,
           nvimtree = {
             transparent_panel = true,
-          }
+          },
+          telescope = true,
+          treesitter = true,
+          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
       })
-      catppuccin.load()
-    end,
+      vim.api.nvim_command "colorscheme catppuccin"
+    end
   },
 }
-
+-- vim.g.catppuccin_flavour = "latte"
+-- vim.g.catppuccin_flavour = "frappe"
+-- vim.g.catppuccin_flavour = "macchiato"
+-- vim.g.catppuccin_flavour = "mocha"
 lvim.colorscheme = "catppuccin"
 lvim.builtin.lualine.options.theme = "catppuccin"
 
