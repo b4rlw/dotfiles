@@ -6,8 +6,8 @@ env:
 
 import:
   # uncomment the flavour you want below:
-  # - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
-  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 
@@ -15,7 +15,7 @@ import:
 #   - ~/.config/alacritty/aw/current.yml
 
 # shell:
-#   program: /usr/local/bin/fish
+  # program: /usr/local/bin/fish
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -23,17 +23,19 @@ selection:
 
 window:
   # opacity: 1 
+  # opacity: 0.97 
   # opacity: 0.95 
   # opacity: 0.90
-  opacity: 0.85
+  # opacity: 0.85
   padding:
-    x: 18
-    y: 16
+    x: 30
+    y: 20
   dynamic_padding: true
   decorations: buttonless
 
 font:
-  size: 13.5
+  size: 13
+  # size: 14
   # use_thin_strokes: true
   normal:
     family: MonoLisa Nerd Font
@@ -53,7 +55,6 @@ font:
     # family: CartographCF Nerd Font
     # family: Hack Nerd Font
     style: Italic
-    # style: Regular Italic
   bold_italic:
     family: MonoLisa Nerd Font
     # family: JetBrainsMono Nerd Font
@@ -73,6 +74,8 @@ key_bindings:
 
   # ATTACH POPUP
   - { key: J, mods: Command, chars: "\x02\x54" }
+
+  # - { key: I, mods: Command, chars: "\x02\x49" }
 
   # DETACH
   - { key: D, mods: Command|Shift, chars: "\x02d" }

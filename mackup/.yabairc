@@ -25,11 +25,11 @@ yabai -m config mouse_action2                   resize
 
 # # general space settings
 yabai -m config layout                          bsp
-yabai -m config bottom_padding                  6
-yabai -m config top_padding                     6
-yabai -m config left_padding                    6
-yabai -m config window_gap                      6
-yabai -m config right_padding                   6
+yabai -m config bottom_padding                  17
+yabai -m config top_padding                     17
+yabai -m config left_padding                    34
+yabai -m config right_padding                   34
+yabai -m config window_gap                      17
 
 # Space labels
 yabai -m space 1 --label "Tools"
@@ -55,11 +55,13 @@ yabai -m rule --add app="Messages"              space=2
 yabai -m rule --add app="Discord"               space=2
 yabai -m rule --add app="Messenger"             space=2
 yabai -m rule --add app="Signal"                space=2
+yabai -m rule --add app="Slack"                 space=2
 
 # Organisation
 yabai -m rule --add app="Calendar"              space=3
 yabai -m rule --add app="Mail"                  space=3
 yabai -m rule --add app="Maps"                  space=3
+yabai -m rule --add app="Notes"                 space=3
 
 # Browsing
 # yabai -m rule --add app="Safari"                space=4

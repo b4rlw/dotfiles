@@ -16,22 +16,28 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.osx": "fish",
     "terminal.integrated.profiles.osx": {
         "zsh": {
             "path": "/bin/zsh"
-        }
+        },
+        "fish": {
+            "path": "/usr/local/bin/fish"
+        },
     },
     "terminal.integrated.inheritEnv": false,
     "terminal.integrated.env.osx": {
         "PATH": ""
     },
-    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontFamily": "MonoLisa Nerd Font",
+    // "terminal.integrated.fontFamily": "CartographCF Nerd Font",
+    // "terminal.integrated.fontSize": 12,
     "python.defaultInterpreterPath": "/Users/jordan/mambaforge/bin/python",
     "git.ignoreLegacyWarning": true,
-    "workbench.sideBar.location": "left",
+    "workbench.sideBar.location": "right",
     // "editor.fontFamily": "Cartograph CF",
     "editor.fontFamily": "MonoLisa",
+    // "editor.fontFamily": "CartographCF Nerd Font",
     // "editor.bracketPairColorization.enabled": false,
     // "editor.fontWeight": "400",
     // "window.zoomLevel": -0.6,
@@ -54,8 +60,11 @@
             // "titleBar.activeBackground": "#1C1E26",
             // "titleBar.activeBackground": "#191b22",
         },
-        // "[Celestial]": {
-        //     "editor.background": "#000000"
+        "[Celestial]": {
+            "notebook.focusedCellBorder": "#E95378",
+        },
+        // "[Celestial Horizon]": {
+        //     "statusBar.background": "#0E0E0E",
         // }
     },
     "editor.tokenColorCustomizations": {
@@ -189,8 +198,6 @@
     // "codesnap.backgroundColor": "#1c1c1c",
     "codesnap.boxShadow": "rgba(0, 0, 0, 0.65) 20px 20px 20px",
     "editor.fontSize": 13,
-    // "editor.fontSize": 14,
-    "workbench.iconTheme": "icons",
     "editor.semanticHighlighting.enabled": true,
     "vim.smartRelativeLine": true,
     "python.formatting.blackArgs": [
@@ -238,9 +245,21 @@
     "cSpell.enabled": false,
     "Lua.telemetry.enable": false,
     "notebook.lineNumbers": "on",
-    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
     "workbench.colorTheme": "Celestial Horizon",
     // "editor.scrollbar.horizontal": "hidden",
     // "editor.scrollbar.vertical": "hidden",
     // "editor.overviewRulerBorder": false,
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true,
+            "source.organizeImports": true
+        }
+    },
 }

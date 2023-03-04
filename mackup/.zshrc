@@ -174,8 +174,6 @@ export BAT_THEME="base16"
 export FZF_TMUX_OPTS="-p"
 export FZF_CTRL_R_OPTS="--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
-export PATH="/Users/Jordan/.local/bin:/Users/Jordan/.config/bin:$PATH"
-
 # bindkey '^ ' autosuggest-accept
 eval "$(zoxide init zsh)"
 eval source <(/usr/local/bin/starship init zsh --print-full-init)
@@ -186,3 +184,4 @@ LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi "tty*" | uniq | wc -l);
 if [ $LIVE_COUNTER -eq 1 ]; then
      neofetch
 fi
+

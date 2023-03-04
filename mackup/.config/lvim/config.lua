@@ -32,6 +32,21 @@ lvim.builtin.telescope.defaults.mappings = {
   --   ["<C-k>"] = actions.move_selection_previous,
   -- },
 }
+-- lvim.builtin.telescope.defaults.layout_strategy = "flex"
+lvim.builtin.telescope = {
+  -- active = true,
+  defaults = {
+    layout_strategy = "horizontal",
+  },
+  -- pickers = {
+  --   git_files = {
+  --     hidden = true,
+  --   },
+  --   live_grep = {
+  --     hidden = true,
+  --   },
+  -- },
+}
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -50,7 +65,7 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 -- lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -139,8 +154,8 @@ formatters.setup {
 -- -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  -- { command = "flake8", filetypes = { "python" } },
-  { command = "pylint", filetypes = { "python" } },
+  { command = "flake8", filetypes = { "python" } },
+  -- { command = "pylint", filetypes = { "python" } },
   { command = "codespell", filetypes = { "python" } },
 }
 
@@ -153,24 +168,27 @@ lvim.plugins = {
   {
     "p00f/nvim-ts-rainbow",
   },
+  -- {
+  --   "lunarvim/Onedarker.nvim",
+  -- },
   {
     "lunarvim/horizon.nvim",
   },
-  {
-    "lunarvim/synthwave84.nvim",
-  },
+  -- {
+  --   "lunarvim/synthwave84.nvim",
+  -- },
   {
     "catppuccin/nvim",
-    as = "catppuccin",
+    name = "catppuccin",
     config = function()
       require("catppuccin").setup({
-        flavour = "macchiato", -- latte, frappe, macchiato, mocha
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
         -- background = { -- :h background
         --   light = "latte",
         --   dark = "mocha",
         -- },
         compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-        transparent_background = true,
+        transparent_background = false,
         -- term_colors = false,
         -- dim_inactive = {
         --   enabled = false,
@@ -198,14 +216,14 @@ lvim.plugins = {
           gitsigns = true,
           bufferline = true,
           nvimtree = {
-            transparent_panel = true,
+            transparent_panel = false,
           },
           telescope = true,
           treesitter = true,
           -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
         },
       })
-      vim.api.nvim_command "colorscheme catppuccin"
+      -- vim.api.nvim_command "colorscheme catppuccin"
     end
   },
 }
@@ -235,3 +253,4 @@ lvim.builtin.treesitter.rainbow = {
   },
   disable = { "html" },
 }
+
