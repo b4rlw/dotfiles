@@ -1,10 +1,7 @@
 [user]
-	name = beatslikeahelix
-	email = 47506872+beatslikeahelix@users.noreply.github.com
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-[http]
-	postBuffer = 157286400
+	name = Jordan Barlow
+	email = jk.barlow@icloud.com
+[core]
+	editor = lvim
+[color]
+	ui = true

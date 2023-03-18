@@ -10,8 +10,8 @@ set -gx FZF_DEFAULT_OPTS '--color=bg+:#1e1e2e,pointer:#f38ba8'
 set -x BAT_THEME 'Catppuccin-mocha'
 
 fish_add_path /Library/TeX/texbin
-fish_add_path /Users/jordan/.config/bin
 fish_add_path ~/.local/bin
+fish_add_path /opt/homebrew/bin
 
 abbr --add bl block --local
 abbr --add bg block --global
@@ -37,23 +37,25 @@ abbr --add mmel micromamba env list
 abbr --add mmec micromamba env create
 abbr --add mmer micromamba env remove
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /usr/local/Caskroom/mambaforge/base/bin/conda
-    eval /usr/local/Caskroom/mambaforge/base/bin/conda "shell.fish" "hook" $argv | source
-end
-
-if test -f "/usr/local/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
-    source "/usr/local/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
-end
-# <<< conda initialize <<<
+alias ls 'exa -al --color=always --group-directories-first --icons'
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-set -gx MAMBA_EXE "/usr/local/bin/micromamba"
+set -gx MAMBA_EXE "/opt/homebrew/bin/micromamba"
 set -gx MAMBA_ROOT_PREFIX "/Users/jordan/micromamba"
 $MAMBA_EXE shell hook --shell fish --prefix $MAMBA_ROOT_PREFIX | source
 # <<< mamba initialize <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/homebrew/Caskroom/mambaforge/base/bin/conda
+    eval /opt/homebrew/Caskroom/mambaforge/base/bin/conda "shell.fish" "hook" $argv | source
+end
+
+if test -f "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
+    source "/opt/homebrew/Caskroom/mambaforge/base/etc/fish/conf.d/mamba.fish"
+end
+# <<< conda initialize <<<
 
 function activate_micromamba_env --on-event fish_prompt
   if test -d ./.env
@@ -77,3 +79,4 @@ count_non_tty_processes
 
 zoxide init fish | source
 starship init fish | source
+

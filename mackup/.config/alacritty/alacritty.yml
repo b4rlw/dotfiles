@@ -1,4 +1,3 @@
-# cSpell:words alacritty lfcd
 live_config_reload: true
 
 env:
@@ -10,12 +9,6 @@ import:
   # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
   # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
-
-# import:
-#   - ~/.config/alacritty/aw/current.yml
-
-# shell:
-  # program: /usr/local/bin/fish
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -74,8 +67,6 @@ key_bindings:
 
   # ATTACH POPUP
   - { key: J, mods: Command, chars: "\x02\x54" }
-
-  # - { key: I, mods: Command, chars: "\x02\x49" }
 
   # DETACH
   - { key: D, mods: Command|Shift, chars: "\x02d" }
@@ -152,23 +143,4 @@ key_bindings:
   # Type <escape>:w<enter> to save neovim
   - { key: S, mods: Command, chars: ":w\n" }
   - { key: S, mods: Command|Shift, chars: ":wa\n" }
-
-  # ------
-  # PYTHON
-  # ------
-
-  # JUPYTER
-  # - { key: I, mods: Command, chars: "ipython\n" }
-  # - { key: N, mods: Command, chars: "jupyter notebook\n" }
-  # - { key: J, mods: Command, chars: "jupyter lab\n" }
-  
-  # KEDRO
-  # - { key: R, mods: Command, chars: "kedro run\n"}
-  # - { key: B, mods: Command, chars: "kedro build-reqs\n" }
-  # - { key: V, mods: Command|Option, chars: "kedro viz -a\n" }
-  # - { key: V, mods: Command|Shift, chars: "kedro viz\n" }
-
-  # - { key: I, mods: Command|Shift, chars: "kedro ipython\n" }
-  # - { key: N, mods: Command|Shift, chars: "kedro jupyter notebook\n" }
-  # - { key: J, mods: Command|Shift, chars: "kedro jupyter lab\n" }
 

@@ -1,2 +1,2 @@
 . "$HOME/.cargo/env"
-export PATH="/usr/local/bin:/Users/jordan/.local/bin:/Users/Jordan/.config/bin:$PATH"
+export PATH=/Users/jordan/.local/bin:$PATH

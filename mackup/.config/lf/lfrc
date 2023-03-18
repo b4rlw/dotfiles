@@ -1,32 +1,25 @@
+
+# ██╗     ███████╗
+# ██║     ██╔════╝
+# ██║     █████╗
+# ██║     ██╔══╝
+# ███████╗██║
+# ╚══════╝╚═╝
+# Terminal file manager
+# https://github.com/gokcehan/lf
+
 set hidden on
-# interpreter for shell commands (needs to be POSIX compatible)
-set shell sh
-
-# set icons 
-
-# set '-eu' options for shell commands
-# These options are used to have safer shell commands. Option '-e' is used to
-# exit on error and option '-u' is used to give error for unset variables.
-# Option '-f' disables pathname expansion which can be useful when $f, $fs, and
-# $fx variables contain names with '*' or '?' characters. However, this option
-# is used selectively within individual commands as it can be limiting at
-# times.
-set shellopts '-eu'
-
+set icons
+set previewer ~/.config/lf/previewer.sh
 set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
-
-# set internal field separator (IFS) to "\n" for shell commands
-# This is useful to automatically split file names in $fs and $fx properly
-# since default file separator used in these variables (i.e. 'filesep' option)
-# is newline. You need to consider the values of these options and create your
-# commands accordingly.
+set shell bash
+set shellopts '-eu'
 set ifs "\n"
-
-# leave some space at the top and the bottom of the screen
 set scrolloff 10
 
-# use enter for shell commands
 map <enter> shell
+map <space> $qlmanage -p "$f"
+map t :toggle; down
 
 # execute current file (must be executable)
 map x $$f
@@ -36,13 +29,22 @@ map X !$f
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
+map gc cd ~/.config
+map gr. cd ~/repos
+map gs. cd ~/scripts
+map gd cd ~/Documents
+map gi cd '~/Library/Mobile Documents/com~apple~CloudDocs'
+map gD cd ~/Downloads
+
+
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
 cmd open ${{
     case $(file --mime-type $f -b) in
-        text/*) $EDITOR $fx;;
+        # text/*) $EDITOR $fx;;
+        text/*) lvim $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
@@ -56,20 +58,21 @@ cmd open ${{
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv $fx ~/.trash
+# cmd trash %set -f; mv $fx ~/.Trash
+# map D trash
 
 # define a custom 'delete' command
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ $ans = "y" ] && rm -rf $fx
-# }}
+cmd delete ${{
+    set -f
+    printf "$fx\n"
+    printf "delete?[y/n]"
+    read ans
+    [ $ans = "y" ] && rm -rf $fx
+}}
 
 # use '<delete>' key for either 'trash' or 'delete' command
 # map <delete> trash
-# map <delete> delete
+map <delete> delete
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
@@ -140,3 +143,4 @@ map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%C
 
 map E %nvr --remote $fx
 map f $vi $(fzf)
+
