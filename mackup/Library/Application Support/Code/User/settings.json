@@ -1,7 +1,9 @@
 {
-    "workbench.colorTheme": "Default Dark+",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
-    }
+    },
+    "editor.fontFamily": "MonoLisa Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+    "workbench.colorTheme": "Horizon Extended",
+    "editor.fontSize": 13
 }

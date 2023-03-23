@@ -22,7 +22,8 @@ disabled = false
 # truncation_symbol = "repo: "
 
 # Before all the version info (python, nodejs, php, etc.)
-# [git_status]
+[git_status]
+disabled = true
 # style = "white"
 # ahead = "⇡${count}"
 # diverged = "⇕⇡${ahead_count}⇣${behind_count}"
@@ -108,6 +109,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
+disabled = true
 
 [golang]
 symbol = " "
