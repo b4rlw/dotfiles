@@ -59,6 +59,7 @@ mouse:
   hide_when_typing: true
 
 key_bindings:
+  - { key: W, mods: Command|Shift, action: Quit }
   # ====
   # TMUX
   # ====
