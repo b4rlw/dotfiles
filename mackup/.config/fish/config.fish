@@ -1,13 +1,44 @@
+#
+# ███████╗██╗███████╗██╗  ██╗
+# ██╔════╝██║██╔════╝██║  ██║
+# █████╗  ██║███████╗███████║
+# ██╔══╝  ██║╚════██║██╔══██║
+# ██║     ██║███████║██║  ██║
+# ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+# A smart and user-friendly command line
+# https://fishshell.com
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
 set fish_greeting
 set -g theme_nerd_fonts yes
-set -U FZF_CTRL_R_OPTS "--reverse"
-set -U FZF_TMUX_OPTS "-p"
-set -gx FZF_DEFAULT_OPTS '--color=bg+:#1e1e2e,pointer:#f38ba8'
+# set -U FZF_CTRL_R_OPTS "--reverse"
+# set -U FZF_TMUX_OPTS "-p"
+# set -gx FZF_DEFAULT_OPTS '--color=bg+:#1e1e2e,pointer:#f38ba8'
 set -x BAT_THEME 'Catppuccin-mocha'
+
+set -Ux FZF_DEFAULT_OPTS "--reverse \
+--border rounded \
+--no-info \
+--pointer='' \
+--marker=' ' \
+--ansi \
+--color='16,bg+:-1,gutter:-1,prompt:4,pointer:5,marker:6'"
+
+set -Ux FZF_TMUX_OPTS "-p \
+--reverse \
+--border rounded \
+--no-info \
+--pointer='' \
+--marker=' ' \
+--ansi \
+--color='16,bg+:-1,gutter:-1,prompt:4,pointer:5,marker:6'"
+
+set -Ux FZF_CTRL_R_OPTS "--border-label=' history ' \
+--header='ctrl-d: delete' \
+--prompt='  '"
 
 fish_add_path /Library/TeX/texbin
 fish_add_path ~/.local/bin

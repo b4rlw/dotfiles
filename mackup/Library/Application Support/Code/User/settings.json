@@ -1,10 +1,339 @@
 {
+    "workbench.sideBar.location": "left",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
     },
     "editor.fontFamily": "MonoLisa Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-    "workbench.colorTheme": "Horizon Extended",
     "editor.fontSize": 13,
-    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/bin/python"
+    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/bin/python",
+    "jupyter.askForKernelRestart": false,
+    "workbench.colorCustomizations": {
+        "[Horizon Extended Blue]": {
+            "statusBar.background": "#191b22",
+            "statusBar.foreground": "#D5D8DA80",
+            "statusBarItem.remoteBackground": "#2A7BCF",
+            "statusBarItem.remoteForeground": "#D5D8DA",
+        },
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "string.quoted.double.python",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "string.quoted.single.python",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "string.quoted.docstring.multi.python, string.quoted.docstring.multi.python punctuation.definition.string.begin.python, string.quoted.docstring.multi.python punctuation.definition.string.end.python",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "string.quoted.docstring.single.python, string.quoted.docstring.single.python punctuation.definition.string.begin.python, string.quoted.docstring.single.python punctuation.definition.string.end.python",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "punctuation.definition.comment",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "variable.parameter",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "entity.name.tag",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "constant",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "keyword",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "storage",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "string",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "variable",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "meta.selector",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "entity.other.attribute-name",
+                "settings": {
+                    "fontStyle": ""
+                }
+            },
+            {
+                "name": "Operators",
+                "scope": "keyword.operator",
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "[Celestial]": {
+            "enabled": true,
+            "rules": {
+                "selfParameter": "#FAC29AE6",
+            }
+        },
+        "[Horizon Extended]": {
+            "enabled": true,
+            "rules": {
+                "selfParameter": "#FFD486E6",
+            }
+        },
+        "[Horizon Extended Blue]": {
+            "enabled": true,
+            "rules": {
+                "selfParameter": "#FFD486E6",
+            }
+        }
+    },
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "relative",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "notebook.lineNumbers": "on",
+    "explorer.confirmDelete": false,
+    "editor.fontLigatures": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.surround": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // {
+        //     "before": [
+        //         "J"
+        //     ],
+        //     "commands": [
+        //         "editor.action.moveLinesDownAction"
+        //     ]
+        // }, // moveLineDown
+        // {
+        //     "before": [
+        //         "K"
+        //     ],
+        //     "commands": [
+        //         "editor.action.moveLinesUpAction"
+        //     ]
+        // }, // moveLineUp
+        // {
+        //     "before": [
+        //         "u"
+        //     ],
+        //     "commands": [
+        //         "undo"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "<C-r>"
+        //     ],
+        //     "commands": [
+        //         "redo"
+        //     ]
+        // },
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "revealInExplorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "after": [
+                "_"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "files.autoSave": "onFocusChange",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.sneak": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<tab>"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "<S-tab>"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "<",
+                "g",
+                "v"
+            ]
+        },
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        // VS Code new marker @ next occurence
+        "<C-c>": false,
+        // Cut
+        "<C-x>": false,
+        // Paste
+        "<C-v>": false,
+        "<C-z>": false,
+        "<C-y>": false
+    },
+    "autoDocstring.docstringFormat": "numpy",
+    "rewrap.wrappingColumn": 75,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "explorer.confirmDragAndDrop": false,
+    "cSpell.enabled": false,
 }
