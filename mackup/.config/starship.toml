@@ -23,12 +23,12 @@ disabled = false
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
-disabled = true
-# style = "white"
-# ahead = "⇡${count}"
-# diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-# behind = "⇣${count}"
-# deleted = "x"
+# disabled = true
+style = "white"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+deleted = "x"
 
 # Last param in the first line/row
 [cmd_duration]
@@ -80,6 +80,7 @@ error_symbol = " [╰─×](bold red)"
 # disabled = false
 
 [aws]
+disabled = true
 symbol = "  "
 
 [buf]
@@ -109,7 +110,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-disabled = true
+# disabled = true
 
 [golang]
 symbol = " "
