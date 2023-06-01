@@ -142,7 +142,7 @@ lvim.plugins = {
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        transparent_background = false,
+        transparent_background = true,
         styles = {
           comments = { "italic" },
           conditionals = { "italic" },
@@ -165,7 +165,7 @@ lvim.plugins = {
 
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.colorscheme = "catppuccin"
-lvim.transparent_window = false
+lvim.transparent_window = true
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {

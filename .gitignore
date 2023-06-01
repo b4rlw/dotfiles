@@ -11,6 +11,7 @@ dist
 config.local.js
 basement_dist
 mackup/.ssh
+mackup/.ipython/profile_default/history.sqlite
 
 mackup/.config/fish/fish_variables
 mackup/.config/fish/conf.d/keys.fish

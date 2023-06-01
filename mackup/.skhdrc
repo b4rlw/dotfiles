@@ -1,0 +1,133 @@
+##############################################
+# Global
+##############################################
+
+## HYPER == SHIFT + CMD + ALT + OPTION
+# Map HYPER to long-press CAPS with Karabiner
+# Restart Yabai
+ctrl + alt + cmd - r : yabai --restart-service
+# Open Terminal
+
+# Split
+hyper - p : yabai -m window --toggle split
+# Balance
+hyper - 0 : yabai -m space --balance
+
+##############################################
+# Navigation
+##############################################
+
+# Spaces:  hyper + [NUM]
+hyper - 1 : yabai -m space --focus 1
+hyper - 2 : yabai -m space --focus 2
+hyper - 3 : yabai -m space --focus 3
+hyper - 4 : yabai -m space --focus 4
+hyper - 5 : yabai -m space --focus 5
+hyper - 6 : yabai -m space --focus 6
+hyper - 7 : yabai -m space --focus 7
+hyper - 8 : yabai -m space --focus 8
+hyper - 9 : yabai -m space --focus 9
+
+# Windows: hyper + [DIR]
+hyper - h : yabai -m window --focus west # || \
+            yabai -m window --focus $(yabai -m query --spaces --display west | jq '.[] | select(."is-visible" == true) | ."last-window"')
+
+hyper - l : yabai -m window --focus east # || \
+            yabai -m window --focus $(yabai -m query --spaces --display east | jq '.[] | select(."is-visible" == true) | ."first-window"')
+
+hyper - k : yabai -m window --focus north # || \
+            # yabai -m window --focus stack.prev || \
+            # yabai -m window --focus stack.last
+
+hyper - j : yabai -m window --focus south # || \
+            # yabai -m window --focus stack.next || \
+            # yabai -m window --focus stack.first
+
+##############################################
+# Ordering
+##############################################
+
+# Rotate
+hyper - r : yabai -m space --rotate 90
+# Mirror
+hyper - m : yabai -m space --mirror y-axis
+# Fullscreen
+hyper - f : yabai -m window --toggle zoom-fullscreen
+# Swap: Ctrl + Alt + [DIR]
+cmd + alt - h : yabai -m window --swap west
+cmd + alt - j : yabai -m window --swap south
+cmd + alt - k : yabai -m window --swap north
+cmd + alt - l : yabai -m window --swap east
+
+##############################################
+# Stackline
+##############################################
+
+# Switch space to binary space partitioning
+hyper - b : yabai -m space --layout bsp
+# Switch space to stack
+hyper - s : yabai -m space --layout stack
+# Toggle stack icons
+# hyper - t :  hs -c 'stackline.config:toggle("appearance.showIcons")'
+# Add the active window to the window or stack to the {direction}
+# Note that this only works when the active window does *not* already belong to a stack
+# cmd + ctrl - h : $HOME/.config/bin/i3-stack.sh west
+# cmd + ctrl - j : $HOME/.config/bin/i3-stack.sh south
+# cmd + ctrl - k : $HOME/.config/bin/i3-stack.sh north
+# cmd + ctrl - l : $HOME/.config/bin/i3-stack.sh east
+
+##############################################
+# Sizing
+##############################################
+
+# Increase (no decrease options, just resizing the relevant windows)
+hyper - a : yabai -m window --resize left:-575:0
+hyper - d : yabai -m window --resize right:575:0
+
+##############################################
+# Ultrawide force resolution
+##############################################
+# 21:9
+# 16:9
+# 3:2
+# 4:3
+# 5:4
+# 1:1
+ctrl + alt + cmd - 1 : yabai -m space --padding abs:17:17:34:34
+ctrl + alt + cmd - 2 : yabai -m space --padding abs:17:17:492:492
+ctrl + alt + cmd - 3 : yabai -m space --padding abs:17:17:684:684
+ctrl + alt + cmd - 4 : yabai -m space --padding abs:17:17:798:798
+ctrl + alt + cmd - 5 : yabai -m space --padding abs:17:17:856:856
+ctrl + alt + cmd - 6 : yabai -m space --padding abs:17:17:1029:1029
+
+# hyper - space : current_space=$(yabai -m query --spaces | jq '.[] | select(."is-visible" == true) | .index'); \
+# 	if [[ $(yabai -m config --space $current_space right_padding) -eq 1024 ]]; then; \
+# 		yabai -m space --padding abs:12:12:850:850; \
+# 	elif [[ $(yabai -m config --space $current_space right_padding) -eq 850 ]]; then; \
+# 		yabai -m space --padding abs:12:12:792:792; \
+# 	elif [[ $(yabai -m config --space $current_space right_padding) -eq 792 ]]; then; \
+# 		yabai -m space --padding abs:12:12:676:676; \
+# 	elif [[ $(yabai -m config --space $current_space right_padding) -eq 676 ]]; then; \
+# 		yabai -m space --padding abs:12:12:482:482; \
+# 	elif [[ $(yabai -m config --space $current_space right_padding) -eq 482 ]]; then; \
+# 		yabai -m space --padding abs:12:12:12:12; \
+# 	else; \
+# 		yabai -m space --padding abs:12:12:1024:1024; \
+# 	fi
+
+##############################################
+# Moving
+##############################################
+
+# Sends Window to Space and shifts focus
+# Send: Shift + Cmd + [NUM]
+# cmd + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
+# cmd + alt - 2 : yabai -m window --space  2; yabai -m space --focus 2
+# cmd + alt - 3 : yabai -m window --space  3; yabai -m space --focus 3
+# cmd + alt - 4 : yabai -m window --space  4; yabai -m space --focus 4
+# cmd + alt - 5 : yabai -m window --space  5; yabai -m space --focus 5
+# cmd + alt - 6 : yabai -m window --space  6; yabai -m space --focus 6
+# cmd + alt - 7 : yabai -m window --space  7; yabai -m space --focus 7
+# cmd + alt - 8 : yabai -m window --space  8; yabai -m space --focus 8
+# cmd + alt - 9 : yabai -m window --space  9; yabai -m space --focus 9
+
