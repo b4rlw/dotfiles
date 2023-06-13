@@ -41,9 +41,10 @@ set -Ux FZF_CTRL_R_OPTS "--border-label=' history ' \
 --prompt='  '"
 
 fish_add_path /Library/TeX/texbin
-fish_add_path ~/.local/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/local/bin
+fish_add_path ~/.config/bin
+fish_add_path ~/.local/bin
 
 abbr --add bl block --local
 abbr --add bg block --global

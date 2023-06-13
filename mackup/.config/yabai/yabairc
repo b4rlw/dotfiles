@@ -3,39 +3,40 @@ sudo yabai --load-sa
 
 # global settings
 yabai -m config mouse_follows_focus             off
+yabai -m config mouse_modifier                  fn
+yabai -m config mouse_action1                   move
+yabai -m config mouse_action2                   resize
 yabai -m config focus_follows_mouse             off
+
 yabai -m config window_placement                second_child
+# yabai -m config window_animation_duration       0.2
 yabai -m config window_topmost                  off
 yabai -m config window_shadow                   on
-yabai -m config window_border                   off
-
-yabai -m config insert_feedback_color 0x00d75f5f
-yabai -m config active_window_border_color 0xff7aa2f7
-yabai -m config normal_window_border_color 0x80565f89
-yabai -m config window_border_placement         exterior
-yabai -m config window_border_width             3
-yabai -m config window_border_radius            12
-yabai -m config window_border_blur              on
-yabai -m config window_border_hidpi             on
 yabai -m config window_opacity                  off 
 yabai -m config window_opacity_duration         0.0
 yabai -m config active_window_opacity           1.0
 yabai -m config normal_window_opacity           1.0
+
+yabai -m config window_border                   off
+yabai -m config window_border_placement         exterior
+yabai -m config insert_feedback_color           0x00d75f5f
+yabai -m config active_window_border_color      0xff7aa2f7
+yabai -m config normal_window_border_color      0x80565f89
+# yabai -m config window_border_width             3
+# yabai -m config window_border_radius            12
+# yabai -m config window_border_blur              on
+# yabai -m config window_border_hidpi             on
+
 yabai -m config split_ratio                     0.5
 yabai -m config auto_balance                    on
-yabai -m config mouse_modifier                  fn
-yabai -m config mouse_action1                   move
-yabai -m config mouse_action2                   resize
-
-yabai -m config window_animation_duration 0.2
 
 # general space settings
 yabai -m config layout                          bsp
-yabai -m config bottom_padding                  17
-yabai -m config top_padding                     17
-yabai -m config left_padding                    17
-yabai -m config right_padding                   17
-yabai -m config window_gap                      17
+yabai -m config top_padding                     24
+yabai -m config bottom_padding                  34
+yabai -m config left_padding                    34
+yabai -m config right_padding                   34
+yabai -m config window_gap                      24
 
 # Space labels
 yabai -m space 1 --label "Tools"
@@ -70,11 +71,11 @@ yabai -m rule --add app="Maps"                  space=3
 yabai -m rule --add app="Notes"                 space=3
 
 # Browsing
-# yabai -m rule --add app="Safari"                space=4
-# yabai -m rule --add app="Firefox"               space=4
-# yabai -m rule --add app="Tor Browser"           space=4
-# yabai -m rule --add app="Google Chrome"         space=4
-# yabai -m rule --add app="Brave Browser"         space=4
+yabai -m rule --add app="Safari"                space=4
+yabai -m rule --add app="Firefox"               space=4
+yabai -m rule --add app="Tor Browser"           space=4
+yabai -m rule --add app="Google Chrome"         space=4
+yabai -m rule --add app="Brave Browser"         space=4
 
 # Office
 yabai -m rule --add app="zoom.us"               space=5
@@ -114,7 +115,7 @@ yabai -m rule --add app="Archetype Tim Henson"  space=9
 yabai -m rule --add app="Archetype Petrucci"    space=9
 
 # Unmanaged
-yabai -m rule --add app="System Preferences" manage=off
+yabai -m rule --add app="System Settings" manage=off
 yabai -m rule --add app="Time Machine" manage=off
 yabai -m rule --add app="FaceTime" manage=off sticky=on
 yabai -m rule --add app="NordVPN" manage=off sticky=on
@@ -123,33 +124,40 @@ yabai -m rule --add app="PCSX2" manage=off
 yabai -m rule --add app="Stats" manage=off
 
 # Center unmanaged applications on launch
-events=('application_launched')
-apps=('System Preferences')
+# events=('application_launched')
+# apps=('System Settings')
+#
+# read -r -d '' action <<- 'EOF'
+#   window="$(yabai -m query --windows --window)"
+#   display="$(yabai -m query --displays --window)"
+#   coords="$(jq \
+#     --argjson window "${window}" \
+#     --argjson display "${display}" \
+#     -nr '(($display.frame | .x + .w / 2) - ($window.frame.w / 2) | tostring)
+#       + ":"
+#       + (($display.frame | .y + .h / 2) - ($window.frame.h / 2) | tostring)')"
+#   yabai -m window --move "abs:${coords}"
+# EOF
+#
+# (( ${#apps[@]} ))   && app_query="app=\"^($(IFS=\|;echo "${apps[*]}"))\$\""
+# for event in "${events[@]}"; do
+#   yabai -m signal --add label="${0}_signal_${event}" event="${event}" \
+#     $(eval "${app_query}}") action="${action}"
+# done
 
-read -r -d '' action <<- 'EOF'
-  window="$(yabai -m query --windows --window)"
-  display="$(yabai -m query --displays --window)"
-  coords="$(jq \
-    --argjson window "${window}" \
-    --argjson display "${display}" \
-    -nr '(($display.frame | .x + .w / 2) - ($window.frame.w / 2) | tostring)
-      + ":"
-      + (($display.frame | .y + .h / 2) - ($window.frame.h / 2) | tostring)')"
-  yabai -m window --move "abs:${coords}"
-EOF
 
-(( ${#apps[@]} ))   && app_query="app=\"^($(IFS=\|;echo "${apps[*]}"))\$\""
-for event in "${events[@]}"; do
-  yabai -m signal --add label="${0}_signal_${event}" event="${event}" \
-    $(eval "${app_query}}") action="${action}"
-done
+# Blur Alacritty
+# yabai -m signal --add event=application_activated \
+#                       app="^Alacritty$"               \
+#                       action="yabai -m config border_blur on"
+# yabai -m signal --add event=application_deactivated \
+#                       app="^Alacritty$"               \
+#                       action="yabai -m config border_blur off"
 
-yabai -m signal --add event=application_activated \
-                      app="^Alacritty$"               \
-                      action="yabai -m config border_blur on"
-yabai -m signal --add event=application_deactivated \
-                      app="^Alacritty$"               \
-                      action="yabai -m config border_blur off"
+# Autopad
+yabai -m signal	--add event=window_focused	   action="$HOME/.config/bin/padding.sh"
+yabai -m signal	--add event=window_resized     action="$HOME/.config/bin/padding.sh"
+# yabai -m signal	--add event=window_created     action="$HOME/.config/bin/padding.sh"
+# yabai -m signal	--add event=window_destroyed   action="$HOME/.config/bin/padding.sh"
 
 echo "yabai configuration loaded"
-

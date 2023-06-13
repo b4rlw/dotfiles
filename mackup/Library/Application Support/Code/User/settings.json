@@ -4,9 +4,9 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "editor.fontFamily": "MonoLisa Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 13,
-    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/bin/python",
+    "editor.fontFamily": "JetBrainsMono Nerd Font, MonoLisa Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "python.defaultInterpreterPath": "/Users/jordan/repos/mariadb-project/.env",
     "jupyter.askForKernelRestart": false,
     "workbench.colorCustomizations": {
         "[Horizon Extended Blue]": {
@@ -17,105 +17,105 @@
         },
     },
     "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "string.quoted.double.python",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "string.quoted.single.python",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "string.quoted.docstring.multi.python, string.quoted.docstring.multi.python punctuation.definition.string.begin.python, string.quoted.docstring.multi.python punctuation.definition.string.end.python",
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "string.quoted.docstring.single.python, string.quoted.docstring.single.python punctuation.definition.string.begin.python, string.quoted.docstring.single.python punctuation.definition.string.end.python",
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "comment",
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "punctuation.definition.comment",
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "variable.parameter",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "entity.name.tag",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "constant",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "keyword",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "storage",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "string",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "variable",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "meta.selector",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "scope": "entity.other.attribute-name",
-                "settings": {
-                    "fontStyle": ""
-                }
-            },
-            {
-                "name": "Operators",
-                "scope": "keyword.operator",
-                "settings": {
-                    "fontStyle": ""
-                }
-            }
-        ]
+        // "textMateRules": [
+        //     {
+        //         "scope": "string.quoted.double.python",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "string.quoted.single.python",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "string.quoted.docstring.multi.python, string.quoted.docstring.multi.python punctuation.definition.string.begin.python, string.quoted.docstring.multi.python punctuation.definition.string.end.python",
+        //         "settings": {
+        //             "fontStyle": "italic"
+        //         }
+        //     },
+        //     {
+        //         "scope": "string.quoted.docstring.single.python, string.quoted.docstring.single.python punctuation.definition.string.begin.python, string.quoted.docstring.single.python punctuation.definition.string.end.python",
+        //         "settings": {
+        //             "fontStyle": "italic"
+        //         }
+        //     },
+        //     {
+        //         "scope": "comment",
+        //         "settings": {
+        //             "fontStyle": "italic"
+        //         }
+        //     },
+        //     {
+        //         "scope": "punctuation.definition.comment",
+        //         "settings": {
+        //             "fontStyle": "italic"
+        //         }
+        //     },
+        //     {
+        //         "scope": "variable.parameter",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "entity.name.tag",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "constant",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "keyword",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "storage",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "string",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "variable",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "meta.selector",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "scope": "entity.other.attribute-name",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     },
+        //     {
+        //         "name": "Operators",
+        //         "scope": "keyword.operator",
+        //         "settings": {
+        //             "fontStyle": ""
+        //         }
+        //     }
+        // ]
     },
     "editor.semanticTokenColorCustomizations": {
         "[Celestial]": {
@@ -333,7 +333,8 @@
     },
     "autoDocstring.docstringFormat": "numpy",
     "rewrap.wrappingColumn": 75,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Horizon Extended Blue",
     "explorer.confirmDragAndDrop": false,
     "cSpell.enabled": false,
+    "workbench.activityBar.visible": false,
 }

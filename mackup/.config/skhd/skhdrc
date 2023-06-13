@@ -29,26 +29,29 @@ hyper - 8 : yabai -m space --focus 8
 hyper - 9 : yabai -m space --focus 9
 
 # Windows: hyper + [DIR]
-hyper - h : yabai -m window --focus west # || \
+hyper - h : yabai -m window --focus west || \
             yabai -m window --focus $(yabai -m query --spaces --display west | jq '.[] | select(."is-visible" == true) | ."last-window"')
 
-hyper - l : yabai -m window --focus east # || \
+hyper - l : yabai -m window --focus east || \
             yabai -m window --focus $(yabai -m query --spaces --display east | jq '.[] | select(."is-visible" == true) | ."first-window"')
 
-hyper - k : yabai -m window --focus north # || \
-            # yabai -m window --focus stack.prev || \
-            # yabai -m window --focus stack.last
+hyper - k : yabai -m window --focus north || \
+            yabai -m window --focus stack.prev || \
+            yabai -m window --focus stack.last
 
-hyper - j : yabai -m window --focus south # || \
-            # yabai -m window --focus stack.next || \
-            # yabai -m window --focus stack.first
+hyper - j : yabai -m window --focus south || \
+            yabai -m window --focus stack.next || \
+            yabai -m window --focus stack.first
 
 ##############################################
 # Ordering
 ##############################################
 
-# Rotate
+# Rotate Layout
 hyper - r : yabai -m space --rotate 90
+# Cycle Windows
+hyper - c : $HOME/.config/bin/cycle_clockwise.sh
+hyper - x : $HOME/.config/bin/cycle_anticlockwise.sh
 # Mirror
 hyper - m : yabai -m space --mirror y-axis
 # Fullscreen
@@ -71,10 +74,10 @@ hyper - s : yabai -m space --layout stack
 # hyper - t :  hs -c 'stackline.config:toggle("appearance.showIcons")'
 # Add the active window to the window or stack to the {direction}
 # Note that this only works when the active window does *not* already belong to a stack
-# cmd + ctrl - h : $HOME/.config/bin/i3-stack.sh west
-# cmd + ctrl - j : $HOME/.config/bin/i3-stack.sh south
-# cmd + ctrl - k : $HOME/.config/bin/i3-stack.sh north
-# cmd + ctrl - l : $HOME/.config/bin/i3-stack.sh east
+cmd + ctrl - h : $HOME/.config/bin/stack.sh west
+cmd + ctrl - j : $HOME/.config/bin/stack.sh south
+cmd + ctrl - k : $HOME/.config/bin/stack.sh north
+cmd + ctrl - l : $HOME/.config/bin/stack.sh east
 
 ##############################################
 # Sizing
@@ -93,12 +96,12 @@ hyper - d : yabai -m window --resize right:575:0
 # 4:3
 # 5:4
 # 1:1
-ctrl + alt + cmd - 1 : yabai -m space --padding abs:17:17:34:34
-ctrl + alt + cmd - 2 : yabai -m space --padding abs:17:17:492:492
-ctrl + alt + cmd - 3 : yabai -m space --padding abs:17:17:684:684
-ctrl + alt + cmd - 4 : yabai -m space --padding abs:17:17:798:798
-ctrl + alt + cmd - 5 : yabai -m space --padding abs:17:17:856:856
-ctrl + alt + cmd - 6 : yabai -m space --padding abs:17:17:1029:1029
+# cmd + ctrl - 1 : yabai -m space --padding abs:24:34:34:34
+# cmd + ctrl - 2 : yabai -m space --padding abs:24:34:522:522
+# cmd + ctrl - 3 : yabai -m space --padding abs:34:34:709:709
+# cmd + ctrl - 3 : yabai -m space --padding abs:24:34:822:822
+# cmd + ctrl - 5 : yabai -m space --padding abs:34:34:878:878
+# cmd + ctrl - 6 : yabai -m space --padding abs:34:34:1046:1046
 
 # hyper - space : current_space=$(yabai -m query --spaces | jq '.[] | select(."is-visible" == true) | .index'); \
 # 	if [[ $(yabai -m config --space $current_space right_padding) -eq 1024 ]]; then; \
@@ -121,13 +124,13 @@ ctrl + alt + cmd - 6 : yabai -m space --padding abs:17:17:1029:1029
 
 # Sends Window to Space and shifts focus
 # Send: Shift + Cmd + [NUM]
-# cmd + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
-# cmd + alt - 2 : yabai -m window --space  2; yabai -m space --focus 2
-# cmd + alt - 3 : yabai -m window --space  3; yabai -m space --focus 3
-# cmd + alt - 4 : yabai -m window --space  4; yabai -m space --focus 4
-# cmd + alt - 5 : yabai -m window --space  5; yabai -m space --focus 5
-# cmd + alt - 6 : yabai -m window --space  6; yabai -m space --focus 6
-# cmd + alt - 7 : yabai -m window --space  7; yabai -m space --focus 7
-# cmd + alt - 8 : yabai -m window --space  8; yabai -m space --focus 8
-# cmd + alt - 9 : yabai -m window --space  9; yabai -m space --focus 9
+alt + shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
+alt + shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
+alt + shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
+alt + shift - 4 : yabai -m window --space  4; yabai -m space --focus 4
+alt + shift - 5 : yabai -m window --space  5; yabai -m space --focus 5
+alt + shift - 6 : yabai -m window --space  6; yabai -m space --focus 6
+alt + shift - 7 : yabai -m window --space  7; yabai -m space --focus 7
+alt + shift - 8 : yabai -m window --space  8; yabai -m space --focus 8
+alt + shift - 9 : yabai -m window --space  9; yabai -m space --focus 9
 

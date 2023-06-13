@@ -13,9 +13,17 @@ basement_dist
 mackup/.ssh
 mackup/.ipython/profile_default/history.sqlite
 
+mackup/.config/btop/themes
+mackup/.config/btop/btop.log
+
+mackup/.config/nvim/init.lua
+mackup/.config/nvim/lua/core
+mackup/.config/nvim/lua/plugins
+
 mackup/.config/fish/fish_variables
 mackup/.config/fish/conf.d/keys.fish
 mackup/.config/fish/functions/fzf_key_bindings.fish
+
 mackup/.aws/credentials
 
 mackup/.wakatime.cfg
