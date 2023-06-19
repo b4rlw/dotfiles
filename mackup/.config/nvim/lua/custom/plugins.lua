@@ -76,5 +76,12 @@ local plugins = {
       })
     end,
   },
+  -- {
+  --   "HiPhish/nvim-ts-rainbow2",
+  -- },
+  -- {
+  --   "SmiteshP/nvim-navic",
+  --   lazy = true,
+  -- },
 }
 return plugins

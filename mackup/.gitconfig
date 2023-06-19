@@ -2,6 +2,6 @@
 	name = Jordan Barlow
 	email = jk.barlow@icloud.com
 [core]
-	editor = lvim
+	editor = nvim
 [color]
 	ui = true

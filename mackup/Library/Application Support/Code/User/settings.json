@@ -4,7 +4,7 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "editor.fontFamily": "JetBrainsMono Nerd Font, MonoLisa Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "MonoLisa Nerd Font, JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 15,
     "python.defaultInterpreterPath": "/Users/jordan/repos/mariadb-project/.env",
     "jupyter.askForKernelRestart": false,
@@ -333,7 +333,7 @@
     },
     "autoDocstring.docstringFormat": "numpy",
     "rewrap.wrappingColumn": 75,
-    "workbench.colorTheme": "Horizon Extended Blue",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "explorer.confirmDragAndDrop": false,
     "cSpell.enabled": false,
     "workbench.activityBar.visible": false,
