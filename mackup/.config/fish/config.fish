@@ -53,7 +53,7 @@ abbr --add be block --erase
 abbr --add o open .
 abbr --add c clear
 abbr --add n neofetch
-abbr --add v lvim
+abbr --add v nvim
 
 abbr --add t tmux
 abbr --add ta tmux attach
@@ -104,8 +104,8 @@ end
 
 function count_non_tty_processes
   set process_count (ps a | awk '{print $2}' | grep -vi "tty*" | uniq | wc -l)
-  if [ $process_count -eq 1 ]
-      neofetch
+  if test $process_count -eq 1
+    neofetch
   end
 end
 
