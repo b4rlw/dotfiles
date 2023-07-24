@@ -18,13 +18,13 @@ M.dap_python = {
   }
 }
 
-M.telescope = {
-  plugin = true,
-
-  n = {
-    -- find
-    ["<leader>fa"] = { "<cmd> Telescope find_files follow=true hidden=true <CR>", "Find all" },
-  },
-}
+-- M.telescope = {
+--   plugin = true,
+--
+--   n = {
+--     -- find
+--     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true hidden=true <CR>", "Find all" },
+--   },
+-- }
 
 return M

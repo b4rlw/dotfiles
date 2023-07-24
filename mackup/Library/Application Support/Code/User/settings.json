@@ -333,8 +333,7 @@
     },
     "autoDocstring.docstringFormat": "numpy",
     "rewrap.wrappingColumn": 75,
-    "workbench.colorTheme": "Celestial Horizon",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "explorer.confirmDragAndDrop": false,
     "cSpell.enabled": false,
-    "workbench.activityBar.visible": false,
 }
