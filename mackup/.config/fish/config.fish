@@ -45,6 +45,9 @@ fish_add_path /opt/homebrew/bin
 fish_add_path /opt/local/bin
 fish_add_path ~/.config/bin
 fish_add_path ~/.local/bin
+fish_add_path $HOME/.cargo/bin
+
+set -gx EDITOR 'nvim'
 
 abbr --add bl block --local
 abbr --add bg block --global
@@ -107,6 +110,10 @@ function count_non_tty_processes
   if test $process_count -eq 1
     neofetch
   end
+end
+
+function ssh
+  env TERM=xterm-256color command ssh $argv
 end
 
 count_non_tty_processes
