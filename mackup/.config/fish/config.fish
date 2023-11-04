@@ -49,6 +49,9 @@ fish_add_path $HOME/.cargo/bin
 
 set -gx EDITOR 'nvim'
 
+set -gx HDF5_DIR /opt/homebrew/opt/hdf5
+set -gx BLOSC_DIR /opt/homebrew/opt/c-blosc
+
 abbr --add bl block --local
 abbr --add bg block --global
 abbr --add be block --erase
@@ -102,8 +105,8 @@ function activate_micromamba_env --on-event fish_prompt
     micromamba deactivate
   end
 end
-# use `block` to temporarily stop events being registered   
-# use `block -e` to re-establish event signals 
+# use `block` to temporarily stop events being registered
+# use `block -e` to re-establish event signals
 
 function count_non_tty_processes
   set process_count (ps a | awk '{print $2}' | grep -vi "tty*" | uniq | wc -l)
