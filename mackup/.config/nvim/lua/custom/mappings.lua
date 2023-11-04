@@ -1,5 +1,14 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    ["<C-h>"] = "",
+    ["<C-j>"] = "",
+    ["<C-k>"] = "",
+    ["<C-l>"] = "",
+  }
+}
+
 M.dap = {
   plugin = true,
   n = {
