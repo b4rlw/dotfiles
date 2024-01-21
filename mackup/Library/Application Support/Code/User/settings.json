@@ -1,9 +1,6 @@
 {
     "workbench.sideBar.location": "left",
     "workbench.startupEditor": "none",
-    "[python]": {
-        "editor.formatOnType": true
-    },
     "editor.fontFamily": "MonoLisa Nerd Font, JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
     "python.defaultInterpreterPath": "/Users/jordan/repos/mariadb-project/.env",
@@ -137,8 +134,6 @@
             }
         }
     },
-    "python.formatting.provider": "black",
-    "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
     "workbench.iconTheme": "catppuccin-mocha",
     "notebook.lineNumbers": "on",
@@ -333,7 +328,24 @@
     },
     "autoDocstring.docstringFormat": "numpy",
     "rewrap.wrappingColumn": 75,
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Catppuccin Noctis Mocha",
     "explorer.confirmDragAndDrop": false,
     "cSpell.enabled": false,
+    
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    // "notebook.source.fixAll": true,
+    "notebook.source.organizeImports": true
+  },
+
+
 }

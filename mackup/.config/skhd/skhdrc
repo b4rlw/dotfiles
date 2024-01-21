@@ -96,10 +96,10 @@ hyper - d : yabai -m window --resize right:575:0
 # 4:3
 # 5:4
 # 1:1
-# cmd + ctrl - 1 : yabai -m space --padding abs:24:34:34:34
-# cmd + ctrl - 2 : yabai -m space --padding abs:24:34:522:522
+cmd + ctrl - 1 : yabai -m space --padding abs:24:34:34:34
+cmd + ctrl - 2 : yabai -m space --padding abs:24:34:522:522
 # cmd + ctrl - 3 : yabai -m space --padding abs:34:34:709:709
-# cmd + ctrl - 3 : yabai -m space --padding abs:24:34:822:822
+cmd + ctrl - 3 : yabai -m space --padding abs:24:34:822:822
 # cmd + ctrl - 5 : yabai -m space --padding abs:34:34:878:878
 # cmd + ctrl - 6 : yabai -m space --padding abs:34:34:1046:1046
 
